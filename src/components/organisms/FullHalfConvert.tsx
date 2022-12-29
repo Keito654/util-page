@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { FC, useState } from 'react';
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button } from '@mui/material';
+import { TextBox } from 'components/atomic/TextBox';
 
 const convertFullToHalf = (word: string): string => {
   return word.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (x) => {
@@ -30,13 +31,9 @@ export const FullHalfConvert: FC = () => {
     <>
       <Box sx={{ fontSize: '2rem', marginBottom: '1ch' }}>全角半角変換</Box>
       <Box>変換前のテキスト</Box>
-      <TextField
-        label="テキスト"
-        multiline
-        rows={4}
-        fullWidth
-        margin="normal"
-        onChange={(e) => {
+      <TextBox
+        labelText="テキストを入力"
+        handleChange={(e) => {
           setInputValue(e.target.value);
         }}
       />
@@ -54,14 +51,7 @@ export const FullHalfConvert: FC = () => {
           全て半角文字に変換
         </Button>
       </Box>
-      <TextField
-        label="変換後"
-        multiline
-        rows={4}
-        value={convertedValue}
-        fullWidth
-        margin="normal"
-      ></TextField>
+      <TextBox labelText="変換後のテキスト" value={convertedValue} />
     </>
   );
 };
