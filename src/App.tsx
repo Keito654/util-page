@@ -13,6 +13,13 @@ export const App: FC = () => {
       <FnctionFrame>
         <Comparsion />
       </FnctionFrame>
+      <a
+        target="_blank"
+        href="https://icons8.com/icon/IXoJG4Gjzs5g/change"
+        rel="noreferrer"
+      >
+        Change icon by Icons8
+      </a>
     </Container>
   );
 };
