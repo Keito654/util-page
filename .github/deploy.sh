@@ -3,8 +3,11 @@
 # エラー時は停止
 set -e
 
+# インストール
+yarn
+
 # ビルド
-npm run build
+yarn build
 
 # ビルド出力ディレクトリに移動
 cd dist
