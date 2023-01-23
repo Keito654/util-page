@@ -57,10 +57,10 @@ export const FullHalfConvert: FC = () => {
         }}
       >
         <Button variant="contained" onClick={handleClickHalfToFull}>
-          全て全角文字に変換
+          全角文字に変換
         </Button>
         <Button variant="contained" onClick={handleClickFullToHalf}>
-          全て半角文字に変換
+          半角文字に変換
         </Button>
       </Box>
       <TextBox labelText="変換後のテキスト" value={convertedValue} />
