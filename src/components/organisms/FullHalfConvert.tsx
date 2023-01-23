@@ -4,15 +4,27 @@ import { Box, Button } from '@mui/material';
 import { TextBox } from 'components/atomic/TextBox';
 
 const convertFullToHalf = (word: string): string => {
-  return word.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (x) => {
+  const strConverted = word.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (x) => {
     return String.fromCharCode(x.charCodeAt(0) - 0xfee0);
   });
+
+  const reslut = strConverted.replace(/ー/g, (_) => {
+    return '-';
+  });
+
+  return reslut;
 };
 
 const convertHalfToFull = (word: string): string => {
-  return word.replace(/[A-Za-z0-9]/g, (x) => {
+  const strConverted = word.replace(/[A-Za-z0-9]/g, (x) => {
     return String.fromCharCode(x.charCodeAt(0) + 0xfee0);
   });
+
+  const reslut = strConverted.replace(/-/g, (_) => {
+    return 'ー';
+  });
+
+  return reslut;
 };
 
 export const FullHalfConvert: FC = () => {
