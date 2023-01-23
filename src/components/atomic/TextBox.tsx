@@ -19,6 +19,7 @@ export const TextBox: FC<Props> = ({ labelText, value, handleChange }) => {
       fullWidth
       margin="normal"
       onChange={handleChange}
+      spellCheck={false}
     />
   );
 };
