@@ -4,7 +4,9 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/util-page/',
+  base: process.env.GITHUB_PAGES
+    ? 'util-page' // レポジトリ名を設定
+    : './',
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
