@@ -17,6 +17,8 @@ echo > .nojekyll
 
 # カスタムドメインにデプロイする場合
 # echo 'www.example.com' > CNAME
+git config --global user.email "keito19981129@gmail.com"
+git config --global user.name "Keito654"
 
 git init
 git checkout -B main
