@@ -1,20 +1,18 @@
 import { FC } from 'react';
-import { Box, Container } from '@mui/material';
+import { Container } from '@mui/material';
+import { FnctionFrame } from 'components/atomic/FunctionFrame';
+import { Comparsion } from 'components/organisms/Comparsion';
 import { FullHalfConvert } from 'components/organisms/FullHalfConvert';
 
 export const App: FC = () => {
   return (
     <Container fixed>
-      <Box
-        sx={{
-          my: 4,
-          border: '2px solid #000000',
-          borderRadius: '10px',
-          padding: '2%',
-        }}
-      >
+      <FnctionFrame>
         <FullHalfConvert />
-      </Box>
+      </FnctionFrame>
+      <FnctionFrame>
+        <Comparsion />
+      </FnctionFrame>
     </Container>
   );
 };

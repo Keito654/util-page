@@ -41,10 +41,9 @@ export const FullHalfConvert: FC = () => {
 
   return (
     <>
-      <Box sx={{ fontSize: '2rem', marginBottom: '1ch' }}>全角-半角変換</Box>
-      <Box>変換前のテキスト</Box>
+      <Box sx={{ fontSize: '2rem', marginBottom: '1ch' }}>全角半角変換</Box>
       <TextBox
-        labelText="テキストを入力"
+        labelText="変換前のテキストを入力"
         handleChange={(e) => {
           setInputValue(e.target.value);
         }}
