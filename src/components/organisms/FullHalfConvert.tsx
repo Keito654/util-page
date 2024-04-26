@@ -1,43 +1,43 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { FC, useState } from 'react';
-import { Box, Button } from '@mui/material';
-import { TextBox } from 'components/atomic/TextBox';
+import type { FC } from 'react'
+import { useState } from 'react'
+import { Box, Button } from '@mui/material'
+import { TextBox } from 'components/atomic/TextBox'
 
-const convertFullToHalf = (word: string): string => {
+function convertFullToHalf(word: string): string {
   const strConverted = word.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (x) => {
-    return String.fromCharCode(x.charCodeAt(0) - 0xfee0);
-  });
+    return String.fromCharCode(x.charCodeAt(0) - 0xFEE0)
+  })
 
-  const reslut = strConverted.replace(/ー/g, (_) => {
-    return '-';
-  });
+  const result = strConverted.replace(/ー/g, (_) => {
+    return '-'
+  })
 
-  return reslut;
-};
+  return result
+}
 
-const convertHalfToFull = (word: string): string => {
+function convertHalfToFull(word: string): string {
   const strConverted = word.replace(/[A-Za-z0-9]/g, (x) => {
-    return String.fromCharCode(x.charCodeAt(0) + 0xfee0);
-  });
+    return String.fromCharCode(x.charCodeAt(0) + 0xFEE0)
+  })
 
-  const reslut = strConverted.replace(/-/g, (_) => {
-    return 'ー';
-  });
+  const result = strConverted.replace(/-/g, (_) => {
+    return 'ー'
+  })
 
-  return reslut;
-};
+  return result
+}
 
 export const FullHalfConvert: FC = () => {
-  const [inputValue, setInputValue] = useState<string | undefined>(undefined);
-  const [convertedValue, setConvertedValue] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string | undefined>(undefined)
+  const [convertedValue, setConvertedValue] = useState<string>('')
 
   const handleClickFullToHalf = () => {
-    setConvertedValue(convertFullToHalf(inputValue ?? ''));
-  };
+    setConvertedValue(convertFullToHalf(inputValue ?? ''))
+  }
 
   const handleClickHalfToFull = () => {
-    setConvertedValue(convertHalfToFull(inputValue ?? ''));
-  };
+    setConvertedValue(convertHalfToFull(inputValue ?? ''))
+  }
 
   return (
     <>
@@ -45,7 +45,7 @@ export const FullHalfConvert: FC = () => {
       <TextBox
         labelText="変換前のテキストを入力"
         handleChange={(e) => {
-          setInputValue(e.target.value);
+          setInputValue(e.target.value)
         }}
       />
       <Box
@@ -64,5 +64,5 @@ export const FullHalfConvert: FC = () => {
       </Box>
       <TextBox labelText="変換後のテキスト" value={convertedValue} />
     </>
-  );
-};
+  )
+}

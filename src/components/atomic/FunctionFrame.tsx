@@ -1,11 +1,11 @@
-import { FC } from 'react';
-import { Box } from '@mui/material';
+import type { FC } from 'react'
+import { Box } from '@mui/material'
 
-type Props = {
-  children: React.ReactNode;
-};
+interface Props {
+  children: React.ReactNode
+}
 
-export const FnctionFrame: FC<Props> = ({ children }) => {
+export const FunctionFrame: FC<Props> = ({ children }) => {
   return (
     <Box
       sx={{
@@ -17,5 +17,5 @@ export const FnctionFrame: FC<Props> = ({ children }) => {
     >
       {children}
     </Box>
-  );
-};
+  )
+}

@@ -1,25 +1,25 @@
-import { FC } from 'react';
-import { Container } from '@mui/material';
-import { FnctionFrame } from 'components/atomic/FunctionFrame';
-import { Comparsion } from 'components/organisms/Comparsion';
-import { FullHalfConvert } from 'components/organisms/FullHalfConvert';
+import type { FC } from 'react'
+import { Container } from '@mui/material'
+import { FunctionFrame } from 'components/atomic/FunctionFrame'
+import { Comparsion } from 'components/organisms/Comparsion'
+import { FullHalfConvert } from 'components/organisms/FullHalfConvert'
 
 export const App: FC = () => {
   return (
     <Container fixed>
-      <FnctionFrame>
+      <FunctionFrame>
         <FullHalfConvert />
-      </FnctionFrame>
-      <FnctionFrame>
+      </FunctionFrame>
+      <FunctionFrame>
         <Comparsion />
-      </FnctionFrame>
+      </FunctionFrame>
       <a
         target="_blank"
         href="https://icons8.com/icon/IXoJG4Gjzs5g/change"
-        rel="noreferrer"
+        rel="noreferrer noopener"
       >
         Change icon by Icons8
       </a>
     </Container>
-  );
-};
+  )
+}

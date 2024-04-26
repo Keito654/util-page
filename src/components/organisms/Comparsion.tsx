@@ -1,52 +1,53 @@
-import { FC, useState } from 'react';
-import { Box, Button, TextField } from '@mui/material';
-import SyncAltIcon from '@mui/icons-material/SyncAlt';
+import type { FC } from 'react'
+import { useState } from 'react'
+import { Box, Button, TextField } from '@mui/material'
+import SyncAltIcon from '@mui/icons-material/SyncAlt'
 
 export const Comparsion: FC = () => {
-  const [baseText, setBaseText] = useState<string | undefined>();
-  const [pullText, setPullText] = useState<string | undefined>();
-  const [resultText, setReslutText] = useState<string[] | undefined>();
+  const [baseText, setBaseText] = useState<string | undefined>()
+  const [pullText, setPullText] = useState<string | undefined>()
+  const [resultText, setResultText] = useState<string[] | undefined>()
 
   const handleBaseChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
   ) => {
-    setBaseText(() => event.target.value);
-  };
+    setBaseText(() => event.target.value)
+  }
 
   const handlePullChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
   ) => {
-    setPullText(() => event.target.value);
-  };
+    setPullText(() => event.target.value)
+  }
 
   const handleButtonClick = () => {
     if (baseText === undefined || pullText === undefined) {
-      setReslutText(undefined);
+      setResultText(undefined)
 
-      return;
+      return
     }
 
     const arrBase = baseText
       .split('\n')
-      .map((x) => x.trim())
-      .filter((x) => !x.match(/^\/\//));
+      .map(x => x.trim())
+      .filter(x => !x.match(/^\/\//))
     const arrConfirm = pullText
       .split('\n')
-      .map((x) => x.trim())
-      .filter((x) => !x.match(/^\/\//));
+      .map(x => x.trim())
+      .filter(x => !x.match(/^\/\//))
 
     const result = arrBase.filter(
-      (x) => !arrConfirm.map((y) => y.toUpperCase()).includes(x.toUpperCase())
-    );
+      x => !arrConfirm.map(y => y.toUpperCase()).includes(x.toUpperCase()),
+    )
 
-    setReslutText(result);
-  };
+    setResultText(result)
+  }
 
   const handleChangeButtonClick = () => {
-    const temp = baseText;
-    setBaseText(() => pullText);
-    setPullText(() => temp);
-  };
+    const temp = baseText
+    setBaseText(() => pullText)
+    setPullText(() => temp)
+  }
 
   return (
     <>
@@ -61,7 +62,7 @@ export const Comparsion: FC = () => {
             padding: '0.1em 0.4em',
           }}
         >
-          {'//'}
+          //
         </Box>
         を先頭につけた行は、コメントとして無視されます。
       </Box>
@@ -108,5 +109,5 @@ export const Comparsion: FC = () => {
         inputProps={{ wrap: 'off' }}
       />
     </>
-  );
-};
+  )
+}

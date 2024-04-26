@@ -1,13 +1,13 @@
-import { FC } from 'react';
-import { TextField } from '@mui/material';
+import type { FC } from 'react'
+import { TextField } from '@mui/material'
 
-type Props = {
-  labelText?: string;
-  value?: string;
+interface Props {
+  labelText?: string
+  value?: string
   handleChange?: (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-  ) => void;
-};
+  ) => void
+}
 
 export const TextBox: FC<Props> = ({ labelText, value, handleChange }) => {
   return (
@@ -21,5 +21,5 @@ export const TextBox: FC<Props> = ({ labelText, value, handleChange }) => {
       onChange={handleChange}
       spellCheck={false}
     />
-  );
-};
+  )
+}
