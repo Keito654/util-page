@@ -19,15 +19,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-          # yarnのキャッシュを効かすために設定 (npmのかたはnpmで)
           cache: pnpm
-      - name: pnpm install
-        run: pnpm install
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9.0.6
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+            - args: [--global, gulp, prettier, typescript]
+
       - name: pnpm build
         run: pnpm build
         # GIthubページは https://USERNAME.github.io/REPOSITORY_NAME/
