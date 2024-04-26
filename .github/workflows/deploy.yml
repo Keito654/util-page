@@ -23,13 +23,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           # yarnのキャッシュを効かすために設定 (npmのかたはnpmで)
-          cache: yarn
-      - name: yarn install
-        run: yarn install
-      - name: yarn build
-        run: yarn build
+          cache: pnpm
+      - name: pnpm install
+        run: pnpm install
+      - name: pnpm build
+        run: pnpm build
         # GIthubページは https://USERNAME.github.io/REPOSITORY_NAME/
         # となるので、envを追加してviteのベースパスを変えるように設定します。
         env:
