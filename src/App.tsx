@@ -3,6 +3,7 @@ import { Container } from '@mui/material'
 import { FunctionFrame } from 'components/atomic/FunctionFrame'
 import { Comparsion } from 'components/organisms/Comparsion'
 import { FullHalfConvert } from 'components/organisms/FullHalfConvert'
+import { RemoveNewLine } from 'components/organisms/RemoveNewLine'
 
 export const App: FC = () => {
   return (
@@ -12,6 +13,9 @@ export const App: FC = () => {
       </FunctionFrame>
       <FunctionFrame>
         <Comparsion />
+      </FunctionFrame>
+      <FunctionFrame>
+        <RemoveNewLine />
       </FunctionFrame>
       <a
         target="_blank"
